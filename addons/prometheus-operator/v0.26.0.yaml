@@ -6499,7 +6499,7 @@ spec:
   clusterIP: None
   ports:
   - name: http
-    typs: NodePort
+    type: NodePort
     port: 8080
     targetPort: http
     nodePort: 30033
