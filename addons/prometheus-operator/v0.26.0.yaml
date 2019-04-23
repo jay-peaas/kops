@@ -6499,8 +6499,10 @@ spec:
   clusterIP: None
   ports:
   - name: http
+    typs: NodePort
     port: 8080
     targetPort: http
+    nodePort: 30033
   selector:
     k8s-app: prometheus-operator
 ---
@@ -6557,10 +6559,12 @@ metadata:
   name: alertmanager-main
   namespace: monitoring
 spec:
+  type: NodePort
   ports:
   - name: web
     port: 9093
     targetPort: web
+    nodePort: 30034
   selector:
     alertmanager: main
     app: alertmanager
@@ -14086,10 +14090,12 @@ metadata:
   name: grafana
   namespace: monitoring
 spec:
+  type: NodePort
   ports:
   - name: http
     port: 3000
     targetPort: http
+    nodePort: 30036
   selector:
     app: grafana
 ---
@@ -15867,10 +15873,12 @@ metadata:
   name: prometheus-k8s
   namespace: monitoring
 spec:
+  type: NodePort
   ports:
   - name: web
     port: 9090
     targetPort: web
+    nodePort: 30037
   selector:
     app: prometheus
     prometheus: k8s
