@@ -6497,12 +6497,10 @@ metadata:
   namespace: monitoring
 spec:
   clusterIP: None
-  type: NodePort
   ports:
   - name: http
     port: 8080
     targetPort: http
-    nodePort: 30033
   selector:
     k8s-app: prometheus-operator
 ---
